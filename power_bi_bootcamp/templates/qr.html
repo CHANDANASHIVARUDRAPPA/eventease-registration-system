@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Complete Your Payment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    #preview {
+      display: none;
+      margin-top: 15px;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border: 2px solid #007bff;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .step-header {
+      font-size: 20px;
+      color: #2c3e50;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .step-number {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      margin-right: 10px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .highlight-box {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px dashed #ccc;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 15px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .home-button:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="checkmark-animation" style="font-size: 48px;">📲</div>
+
+    <!-- STEP 1 -->
+    <div class="section">
+      <div class="step-header"><span class="step-number">1</span> Scan & Pay via UPI</div>
+      <div class="highlight-box">
+        <img src="{{ url_for('static', filename='upi_qr.png') }}" alt="QR Code"
+             style="width: 260px; border-radius: 10px;"><br><br>
+        <p class="note">Scan this QR code using PhonePe, GPay, PayTM etc. and complete your payment.</p>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="section">
+      <div class="step-header"><span class="step-number">2</span> Upload Your Payment Screenshot</div>
+      <form action="/upload-proof" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="ref_id" value="{{ ref_id }}">
+
+        <input type="file" name="proof" accept="image/png, image/jpeg" required onchange="previewImage(event)">
+        <br>
+
+        <!-- Image Preview -->
+        <img id="preview" src="#" alt="Preview of your screenshot">
+
+        <br><br>
+        <button type="submit" class="confirm-button"> Submit Payment Proof</button>
+      </form>
+    </div>
+
+    <a href="/" class="home-button">← Back to Home</a>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+        output.style.display = "block";
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>

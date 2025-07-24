@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Power BI Bootcamp Registration</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    .admin-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #343a40;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .admin-button:hover {
+      background-color: #212529;
+    }
+
+    .bottom-nav {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
+    <h2>Register for Power BI Bootcamp</h2>
+
+    <form action="/submit" method="post" onsubmit="return validateForm()">
+      <input type="text" name="name" id="name" placeholder="Full Name" required pattern="^[A-Za-z\s]{2,50}$" title="Only letters and spaces allowed">
+
+      <input type="email" name="email" id="email" placeholder="Email (Gmail only)" required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Only Gmail addresses are allowed">
+
+      <input type="tel" name="phone" id="phone" placeholder="Phone Number" required pattern="^\d{10}$" title="Must be a 10-digit number">
+
+      <input type="text" name="college" id="college" placeholder="College Name" required pattern="^[A-Za-z\s.,]{2,100}$" title="Only alphabets, spaces, commas, and periods are allowed">
+
+      <select name="branch" required>
+        <option value="">Select Branch</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="AIML">AIML</option>
+        <option value="ISE">ISE</option>
+        <option value="ME">Mechanical</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <button type="submit">Submit & Pay</button>
+    </form>
+
+    <div class="bottom-nav">
+      <a href="/admin-login" class="admin-button"> Admin Login</a>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+      const name = document.getElementById("name").value;
+
+      const phonePattern = /^\d{10}$/;
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+      const namePattern = /^[A-Za-z\s]{2,50}$/;
+
+      if (!phonePattern.test(phone)) {
+        alert("Phone must be exactly 10 digits.");
+        return false;
+      }
+
+      if (!emailPattern.test(email)) {
+        alert("Only Gmail addresses are allowed (e.g., name@gmail.com).");
+        return false;
+      }
+
+      if (!namePattern.test(name)) {
+        alert("Name should contain only letters and spaces.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</body>
+</html>
