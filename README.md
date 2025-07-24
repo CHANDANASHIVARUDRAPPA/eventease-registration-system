@@ -17,6 +17,8 @@ A complete end-to-end registration platform built for organizing tech bootcamps 
 - 🔐 **Admin Login Dashboard** to view all participants & proofs
 - 💌 **Separate Host Confirmation Emails** per entry
 - 🚫 **Automatic Form Closure** when capacity is reached
+- 🧠 **Full client-side form validation**
+- 📸 **Proof image** viewing directly from dashboard
 
 ---
 
