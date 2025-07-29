@@ -6,19 +6,19 @@ A complete end-to-end registration platform built for organizing tech bootcamps 
 
 ---
 
-## ✨ Features
+##  Features
 
-- ✅ **Responsive Registration Form** with live field validation
-- 📱 **QR-Based UPI Payment Integration**
-- 📩 **Auto Email Confirmations** (with custom templates)
-- 📄 **PDF Invoice Generation** per registration
-- 🧾 **Payment Proof Upload & Admin Approval Workflow**
-- 📊 **Live Seat Tracking** (Max 50 registrations)
-- 🔐 **Admin Login Dashboard** to view all participants & proofs
-- 💌 **Separate Host Confirmation Emails** per entry
-- 🚫 **Automatic Form Closure** when capacity is reached
-- 🧠 **Full client-side form validation**
-- 📸 **Proof image** viewing directly from dashboard
+-  **Responsive Registration Form** with live field validation
+-  **QR-Based UPI Payment Integration**
+-  **Auto Email Confirmations** (with custom templates)
+-  **PDF Invoice Generation** per registration
+-  **Payment Proof Upload & Admin Approval Workflow**
+-  **Live Seat Tracking** (Max 50 registrations)
+-  **Admin Login Dashboard** to view all participants & proofs
+-  **Separate Host Confirmation Emails** per entry
+-  **Automatic Form Closure** when capacity is reached
+-  **Full client-side form validation**
+-  **Proof image** viewing directly from dashboard
 
 ---
 
@@ -31,7 +31,7 @@ This project is ideal for:
 
 ---
 
-## 💡 What Makes It Unique?
+## What Makes It Unique?
 
 Unlike typical Google Forms or Typeforms, this is a **completely automated backend-driven registration system**:
 - Sends **real-time participant confirmations**
@@ -44,7 +44,7 @@ No Airtable. No Typeform. No Zapier. Just a clean, efficient Python + Flask-base
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - Python (Flask)
 - HTML, CSS, JS (Vanilla)
@@ -55,7 +55,7 @@ No Airtable. No Typeform. No Zapier. Just a clean, efficient Python + Flask-base
 ---
 
 
-## 🚀 How to Run Locally
+##  How to Run Locally
 
 ```bash
 git clone https://github.com/your-username/powerbi-bootcamp-registration.git
