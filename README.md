@@ -22,7 +22,7 @@ A complete end-to-end registration platform built for organizing tech bootcamps 
 
 ---
 
-## 🎯 Use Case
+## Use Case
 
 This project is ideal for:
 - Tech/Management Bootcamps
